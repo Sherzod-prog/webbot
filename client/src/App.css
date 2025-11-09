@@ -1,0 +1,32 @@
+.card_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.category-filters button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-filters button:hover {
+  background: #f0f0f0;
+}
+
+.category-filters button.active {
+  background: #ff6900;
+  color: white;
+  border-color: #ff6900;
+}
