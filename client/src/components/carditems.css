@@ -9,6 +9,8 @@
   width: 200px;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
   background-color: #0000;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .card-img {
   border-radius: 8px;
@@ -18,4 +20,9 @@
   font-size: 14px;
   color: #ffffff;
   text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.15);
 }
