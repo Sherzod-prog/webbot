@@ -1,6 +1,7 @@
 .modal {
   position: fixed;
   inset: 0;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,10 +9,12 @@
 }
 /* fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 */
 .modal-content {
+  margin: auto 0;
+  text-align: center;
   background-color: white;
   border-radius: 8px;
   padding: 24px;
-  min-width: 400px;
+  min-width: 300px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   color: black;
 }
