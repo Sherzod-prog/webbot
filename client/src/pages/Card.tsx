@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 
 const products = getData().sort((a, b) => a.categoryId - b.categoryId);
 
-function Card() {
-  const [prodQuantity, setProdQuantity] = useState(1);
+function Card({ onCheckout }) {
+  const [prodQuantity, setProdQuantity] = useState(0);
 
   const handleQuantityChange = (newQuantity: number) => {
     setProdQuantity(newQuantity);
@@ -20,7 +20,9 @@ function Card() {
     <>
       <h1>Pizza</h1>
       <p>Welcome to the Pizza App!</p>
-
+      <div>
+        Umumiy narx: <button className="cart">Buyurtma berish</button>
+      </div>
       <div className="card_container">
         {products.map((p) => (
           <CardItems

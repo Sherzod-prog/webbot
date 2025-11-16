@@ -1,26 +1,20 @@
+import { useEffect } from "react";
 import "./App.css";
-import { Route, Routes } from "react-router";
 import Card from "./pages/Card";
-import Modal from "./components/modal/modal";
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Card />} />
-      <Route
-        path="/:id"
-        element={
-          <Modal
-            isOpen={false}
-            onClose={function (): void {
-              throw new Error("Function not implemented.");
-            }}
-            children={undefined}
-          />
-        }
-      />
-    </Routes>
-  );
+  const telegram = (window as any).Telegram?.WebApp;
+
+  useEffect(() => {
+    telegram?.ready?.();
+  }, []);
+
+  const onCheckout = () => {
+    telegram.MainButton.txt = "Sotib olish";
+    telegram.MainButton.show();
+  };
+
+  return <Card onCheckout={onCheckout} />;
 }
 
 export default App;

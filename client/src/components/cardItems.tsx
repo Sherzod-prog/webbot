@@ -16,9 +16,11 @@ export const CardItems: React.FC<CardProps> = ({
   quantity = 0,
 }) => {
   const [qty, setQty] = useState(quantity);
+  console.log(qty);
+
   return (
     <div className="card">
-      <div className="card-badge">1</div>
+      {qty > 0 ? <div className="card-badge">{qty}</div> : null}
       <div className="card-container">
         <img className="card-img" width={150} src={image} alt={title} />
       </div>
@@ -30,13 +32,22 @@ export const CardItems: React.FC<CardProps> = ({
             currency: "RUB",
           })}
           <div>
-            <button disabled={qty === 15} onClick={() => setQty(qty + 1)}>
+            <button
+              className="btn-add"
+              disabled={qty === 15}
+              onClick={() => setQty(qty + 1)}
+            >
               +
             </button>
-            {qty}
-            <button disabled={qty === 0} onClick={() => setQty(qty - 1)}>
-              -
-            </button>
+            {qty > 0 ? (
+              <button
+                className="btn-remove"
+                disabled={qty === 0}
+                onClick={() => setQty(qty - 1)}
+              >
+                -
+              </button>
+            ) : null}
           </div>
         </div>
       </div>
